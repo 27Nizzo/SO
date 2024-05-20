@@ -14,5 +14,6 @@ int main() {
 
     printf("Encontrei %d letras c\n", contador);
     return 0;
- //apos dar o input para contar tem que se dar CNTRL+D   
+ // Após dar o input para contar tem que se dar CNTRL+D   
+ // Para fazer a contagem do ficheiro de texto: cat texto.txt | ./cont
 }
