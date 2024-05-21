@@ -1,0 +1,52 @@
+
+_Parte I_:
+
+1 - Relativamente aos estados de um processo, explique o que é um processo "bloqueado" e a importância da existência deste estado. 
+Dê exemplos.
+----------------------------------------------------------------------------------------------------------------------------------
+R: 
+    Um processo bloqueado é um estado no ciclo de vida de um processo em que ele não pode continuar a execução até que um evento 
+específico ocorra. Esse evento pode ser, por exemplo, a libertação de um recurso necessário ou a conclusão de uma operação de 
+entrada/saída(I/O).
+    Importância do estado bloqueado em um processo:
+    ->_Gestão de recursos_: Permite que os processos que necessitam de recursos que não estão imediatemente disponíveis aguardem de 
+forma ordenada, libertando a CPU para outros processos que podem continuar a execução.
+
+    ->_Eficiência do Sistema_: Ao colocar processos que não podem progredir em estado de bloqueio, o sistema evita o descanso da CPU 
+e melhora a eficiência global do sistema.
+
+    -> _Sincronização_: Facilita a sincronização entre processos. Por exemplo, um processo pode estar bloqueado esperando por um sinal
+de outro processo indicado que uma consição foi satisfeita. 
+
+    -> _Prevenção de Deadlock_: O estado de bloqueio em um processo ajuda a gerir as dependências entre processos e recursos, 
+contribuíndo para a prevenção e resolução de deadlocks. 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+_Parte II_:
+
+2 -Justifique porque, no que diz respeito a algoritmos de substituição de páginas, não é usado normalmente o Least Recently
+Used, apesar de este se aproximar razoavelmente do óptimo. Descreva um dos algoritmos usados na prática.
+----------------------------------------------------------------------------------------------------------------------------------
+R:
+    O algorítmo de páginas LRU(Least Recently Used) substítui a página residente na memória acessada à menos tempo, ou seja, o
+algorítmo substituí a página que está há mais tempo residente na memória sem estar a ser acessada, e que tem portanto baixa 
+probabilidade de ser acessada em um futuro próximo. 
+    Este algorítmo é bom, mas tem downsides, necessita de uma estrutura de dados adicional a ser implementada e também precisa de
+uma assistência de hardware alta. 
+    O algoritmo óptimo é o melhor algoritmo de substituição de páginas, este expulsa a página que não será usada durante mais tempo,
+este algoritmo toma a decisão que resulta no menor número de falhas da página no futuro. No entanto, na prática. é dificil de 
+implementar porque requer conhecimento prévio do futuro, o que não é viável em sistemas reais. O algoritmo funciona por 2 pontos
+    
+    1 - _Previsão do Futuro_:
+                O algoritmo precisa de saber com antecedência quais são as páginas que serão acessadas no futuro.
+                
+    2 - _Escolha da Página a Ser Substituída_:
+                Quando ocorre uma falha da página e uma nova página precisa de ser carregada na memória, o algoritmo escolhe a 
+página que será acessada mais tarde no futuro, qualquer uma delas pode ser substituída.
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
