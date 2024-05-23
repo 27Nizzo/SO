@@ -5,6 +5,9 @@
 #include<sys/stat.h>
 
 
+
+/*Exercicio 2*/
+
 void conta(int n, char* imagens[n]){
     int pipefd[2];
 
@@ -37,7 +40,7 @@ void conta(int n, char* imagens[n]){
         else if(pid_wc == 0) {
             dup2(pipefd[0], STDIN_FILENO);
             close(pipefd[0]);
-            execl("wc", "-l", NULL);
+            execlp("wc", "wc", "-l", NULL);
             perror("execl");
             exit(EXIT_FAILURE);
         } 
@@ -50,6 +53,7 @@ void conta(int n, char* imagens[n]){
     }
 }
 
+/*Exercicio 1*/
 
 void defeitos(int n, char* imagens[n], int max) {
 
